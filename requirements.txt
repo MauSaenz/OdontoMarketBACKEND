@@ -1,0 +1,28 @@
+# ==============================================================================
+# DEPENDENCIAS DEL BACKEND - ODONTOMARKET (E-Commerce Dental Multi-Vendedor)
+# ==============================================================================
+
+# 1. Framework Web y Servidor ASGI Asíncrono
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+
+# 2. ORM (Object-Relational Mapping) y Migraciones de Base de Datos
+# Usamos SQLAlchemy 2.0+ con sintaxis moderna de tipado estricto (Mapped / mapped_column)
+sqlalchemy>=2.0.36
+alembic>=1.14.0
+
+# 3. Validación de Datos, Serialización y Variables de Entorno (Pydantic v2)
+pydantic>=2.10.0
+pydantic-settings>=2.6.0
+email-validator>=2.2.0
+
+# 4. Seguridad, Autenticación JWT y Hashing de Contraseñas
+# python-jose genera y verifica firmas criptográficas para JSON Web Tokens (JWT)
+python-jose[cryptography]>=3.3.0
+# passlib junto con bcrypt realiza el hashing unidireccional de contraseñas.
+# Fijamos bcrypt==4.0.1 para garantizar compatibilidad total con passlib en Python 3.12+
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+
+# 5. Soporte para formularios OAuth2 (requerido por OAuth2PasswordRequestForm de FastAPI)
+python-multipart>=0.0.12
